@@ -1,0 +1,14 @@
+apiVersion: Ver1
+kind: Service
+
+metadata:
+  name: capstone-udacity
+  labels:
+    app: capstone-udacity
+spec:
+  type: LoadBalancer
+  selector:
+    app: capstone-udacity
+  ports:
+    - port: 80
+      targetPort: 80

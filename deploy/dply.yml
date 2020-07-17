@@ -1,0 +1,24 @@
+apiVersion: apps/ver1
+kind: Deployment
+
+metadata:
+  name: capstone-udacity
+  labels:
+    app: capstone-udacity
+spec:
+  strategy:
+    type: RollingUpdate
+  replicas: 2
+  selector:
+    matchLabels:
+      app: capstone-udacity
+  template:
+    metadata:
+      labels:
+        app: capstone-udacity
+    spec:
+      containers:
+        - name: capstone-udacity
+          image: vishakhasingh4/capstone-udacity:17
+          ports:
+            - containerPort: 80
